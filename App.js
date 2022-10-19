@@ -65,9 +65,13 @@ export default function App() {
         ) : (
           days.map((day, idx) => (
             <View key={idx} style={styles.day}>
-              <Text style={styles.temp}>{parseFloat(day.temp.day).toFixed(1)}</Text>
+              <Text style={styles.temp}>
+                {parseFloat(day.temp.day).toFixed(1)}
+              </Text>
               <Text style={styles.description}>{day.weather[0].main}</Text>
-              <Text style={styles.days}>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
+              <Text style={styles.days}>
+                {new Date(day.dt * 1000).toString().substring(0, 10)}
+              </Text>
             </View>
           ))
         )}
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     marginTop: -30,
     fontSize: 60,
   },
-  days:{
-    fontSize:30
-  }
+  days: {
+    fontSize: 30,
+  },
 });
